@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Add to Proton Calendar",
+  "description": "Copy events into Proton Calendar. Nothing leaves your computer. Developed by Bruce Starlove. Not affiliated with Proton.",
+  "version": "0.3.0",
+  "minimum_chrome_version": "92",
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://calendar.proton.me/*"],
+  "action": {
+    "default_title": "Add to Proton Calendar",
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png" }
+  },
+  "content_scripts": [
+    { "matches": ["https://calendar.proton.me/*"], "js": ["calendar-paste.js"], "run_at": "document_idle" }
+  ]
+}

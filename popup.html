@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add to Proton Calendar</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Add to Proton Calendar</h1>
+    <a href="https://calendar.proton.me/" target="_blank" rel="noopener noreferrer" aria-label="Open Proton Calendar in a new tab">Open ↗</a>
+  </header>
+  <main data-step="start">
+    <div class="start-only stack">
+      <button id="capture-page" type="button">Find an event on this page</button>
+      <button id="manual-entry" type="button" class="secondary">Enter details yourself</button>
+      <p class="hint">This page is read only when you click Find, and only on your computer. Nothing is ever sent anywhere.</p>
+      <p class="hint">On a busy page, select the event’s text first.</p>
+    </div>
+
+    <form id="review-form" class="review-only stack">
+      <div class="review-head">
+        <p id="review-note" class="note"></p>
+        <button id="start-over" type="button" class="link">Start over</button>
+      </div>
+      <label id="pick-row" hidden><span id="pick-label">Events found</span><select id="event-pick"></select></label>
+      <label>Title<input id="event-title" type="text" maxlength="255" required></label>
+      <div class="pair">
+        <label>Starts<input id="event-start" type="datetime-local" required></label>
+        <label>Ends<input id="event-end" type="datetime-local" required></label>
+      </div>
+      <label class="check"><input id="event-all-day" type="checkbox">All day</label>
+      <label id="zone-row">Time zone<input id="event-zone" type="text" list="zone-list" required spellcheck="false" autocomplete="off" placeholder="America/New_York"></label>
+      <datalist id="zone-list"></datalist>
+      <label>Location or meeting link<input id="event-location" type="text" maxlength="255"></label>
+      <label>Notes<textarea id="event-description" maxlength="3000" rows="2"></textarea></label>
+      <button type="submit">Copy event</button>
+    </form>
+
+    <p id="status" role="status" aria-live="polite"></p>
+    <p class="hint review-only">Then click <b>New event</b> in <a href="https://calendar.proton.me/" target="_blank" rel="noopener noreferrer" aria-label="Proton Calendar (opens in a new tab)">Proton Calendar</a> and paste into <b>Add title</b> to fill in the form.</p>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

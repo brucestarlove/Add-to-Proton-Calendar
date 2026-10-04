@@ -1,0 +1,26 @@
+{
+  "name": "add-to-proton-calendar",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": {
+    "name": "Bruce Starlove",
+    "email": "brucestarlove@gmail.com",
+    "url": "https://github.com/brucestarlove"
+  },
+  "homepage": "https://github.com/brucestarlove/extension-protoncal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brucestarlove/extension-protoncal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/brucestarlove/extension-protoncal/issues",
+    "email": "brucestarlove@gmail.com"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check": "node --check popup.js && node --check calendar-paste.js && node --check lib/capture.js && node --check lib/clipboard.js && node --check lib/event.js && node --check lib/find.js && node --check lib/page-text.js && node --check lib/structured.js && node --check lib/time.js && node --check lib/zones.js && node --check scripts/package.mjs && node -e \"JSON.parse(require('node:fs').readFileSync('manifest.json','utf8'))\"",
+    "package": "node scripts/package.mjs"
+  }
+}

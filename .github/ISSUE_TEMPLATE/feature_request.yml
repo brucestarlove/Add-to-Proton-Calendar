@@ -1,0 +1,16 @@
+name: Feature request
+description: Suggest a change to the event copying workflow.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What task is difficult today?
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested behavior
+      description: Use invented event examples and omit personal information.
+    validations:
+      required: true

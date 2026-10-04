@@ -1,0 +1,30 @@
+name: Bug report
+description: Report incorrect detection or a problem filling an event.
+body:
+  - type: markdown
+    attributes:
+      value: "Use invented event details. Remove private meeting links and personal messages. For vulnerabilities, follow SECURITY.md."
+  - type: input
+    id: versions
+    attributes:
+      label: Extension and browser versions
+      placeholder: "0.3.0, Chrome 140, macOS"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include a sanitized date/time example if detection failed.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: zone
+    attributes:
+      label: Browser time zone, Proton time zone, and Proton interface language
