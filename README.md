@@ -1,8 +1,12 @@
 # Add to Proton Calendar
 
+![](marquee-a-hero.png)
+
 **Stop retyping event details into Proton Calendar.** This small Chrome extension finds events on the page you are reading, lets you review the details, and copies an event you can paste into the calendar's **New event** form. You can also enter the details yourself.
 
 Find → review → copy → paste → save.
+
+![](marquee-b-steps.png)
 
 **Your information stays on your computer.** The extension reads a page only when you click **Find**, works out the event right there in your browser, and sends nothing anywhere: not to its developer, not to anyone. There is no account, no analytics, no tracking, and nothing is stored. Pages and emails can be personal, so it was built to keep what it reads to itself. [How it protects your privacy](#privacy-and-permissions).
 
@@ -18,9 +22,15 @@ Built by **[Bruce Starlove](https://github.com/brucestarlove)**. Not affiliated 
 
 A note in the corner confirms the fill, or names any field Proton did not accept. Anything else you paste into the title pastes normally.
 
+*Example: detecting an event in Gmail*
+
 ![Screenshot of an event in Gmail](./ext-pc-01.png)
 
+*Example: detecting an event on an event page*
+
 ![Screenshot of an event in Luma](./ext-pc-02.png)
+
+*Example: pasting the event into Proton Calendar*
 
 ![Screenshot of pasting an event in Proton Calendar](./ext-pc-03.png)
 
@@ -78,6 +88,8 @@ End: 2026-11-07
 
 `Title`, `Start`, and `End` are required, in that order, and `Start` and `End` must both be dates or both date-times. `Location` and `Notes` are optional, and `Notes` runs to the end. Titles and locations are single lines of at most 255 characters; notes can have up to 3,000 characters. A time without an offset (`2026-10-05 14:00`) is read as your browser's local time. Use explicit offsets to avoid ambiguity around daylight saving changes. Invalid dates and blocks over 4,000 characters pass through as ordinary text. Pasting an event also clears an existing location or notes if those fields are empty in the copied event.
 
+![](small-c-flow.png)
+
 ## Limits
 
 - **Time zone.** Times are converted to your browser's time zone for the form. That matches Proton unless your Proton calendar uses a different zone, so check it before saving. All-day events have no time zone.
@@ -105,6 +117,8 @@ Copying writes plain text to your system clipboard, like anything you copy, so c
 
 The paste helper only looks at text from a user paste into an event's title field, so the extension needs no clipboard-reading permission. It runs on Proton Calendar pages to listen for that paste. A copied event stays on your clipboard until you copy something else.
 
+![](marquee-a-brand.png)
+
 ## Development
 
 No build step and no runtime or npm dependencies. Use Node.js 22 or newer to run the checks. Packaging requires the `zip` command.
@@ -125,6 +139,8 @@ Created and maintained by **Bruce Starlove**.
 - X: [@StarloveDev](https://x.com/StarloveDev)
 
 For vulnerabilities, use the private contact in [SECURITY.md](SECURITY.md).
+
+![](small-b-night.png)
 
 ## License
 
